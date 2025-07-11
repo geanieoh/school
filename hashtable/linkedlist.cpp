@@ -139,7 +139,12 @@ void LinkedList::printList(bool backward){
     }
 
     while(current){
-        std::cout << "ID: " << current->data.id << " Data: " << (current->data.data) << std::endl;
+        if(current->next != nullptr){
+            std::cout << current->data.id << " --> ";
+        }
+        else{
+            std::cout << current->data.id;
+        }
         current = backward ? current->prev : current->next;
     }
 }
